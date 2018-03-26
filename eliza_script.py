@@ -24,7 +24,14 @@ rules_de = {
   'Wuenscht du dass {0}?',
   'Was denkst du darueber wenn {0}?'],
   'Wie (.*)': ['Wieso willst du das wissen?'],
+  'Warum (.*)': ['Ich weiß leider auch nicht warum {0}', 'Das ist eine gute Frage warum {0}'],
+  'Woher (.*)': ['Ich weiß leider auch nicht woher {0}', 'Das ist eine gute Frage woher {0}'],
   'hei(ss|ß)e (.*)': ['Sehr schöner Name.'],
   'Name ist (.*)': ['Das ist aber ein schöner Name.', '{0} ist aber ein schöner Name.' ],
   'Wie hei(ss|ß)t du': ['Ich heiße Bot', 'Man nennt micht Bot', 'Mein Name ist Bot und wie heißt du?'],
+  'Weil (.*)': ['Das ist deine Meinung.'],
+  'Weil ich (.*)': ['Hm ok'],
+  '(Hallo|Hi|Hello|Servus)': ['{0}', 'Hi!', 'Hi wie geht es dir?', 'Hallo, schön mal wieder von dir zu hören'],
+  'Mir geht es .*(gut|hervorragend|grandios|super)': ['Das freut mich zu hören', 'Super, weiter so'],
+  'Mir geht es .*(schlecht|nicht gut)': ['Warum geht es dir {0}?']
 }

@@ -88,8 +88,15 @@ def send_message(message):
 #send_message("Was wenn du alles sein koenntest was du willst")
 #send_message("Was ist wenn du den Weltfrieden herbeifuehren koenntest")
 
+
 while True:
     user_input = input("Du: ")
     if user_input == "bye":
+        print(bot_template.format("Bye bye!"))
         break
     send_message(re.sub("[!?,^]", "", user_input))
+'''
+match = re.search('Mir geht es (.*(gut|hervorragend|grandios|super))', 'Mir geht es gut')
+if match is not None:
+    print('Match!')
+'''
