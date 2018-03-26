@@ -2,6 +2,7 @@ import re
 import random
 import time
 import eliza_script
+import spell_check as sc
 
 bot_template = "Bot: {}"
 user_template = "Du: {}"
@@ -90,13 +91,12 @@ def send_message(message):
 
 
 while True:
-    user_input = input("Du: ")
+    user_input = input("Du: ").lower()
+    cor_user_input = ""
+    for word in user_input.split():
+        cor_user_input += sc.correction(word) + " "
+    #print(cor_user_input)
     if user_input == "bye":
         print(bot_template.format("Bye bye!"))
         break
-    send_message(re.sub("[!?,^]", "", user_input))
-'''
-match = re.search('Mir geht es (.*(gut|hervorragend|grandios|super))', 'Mir geht es gut')
-if match is not None:
-    print('Match!')
-'''
+    send_message(re.sub("[!?,^]", "", cor_user_input.rstrip()))

@@ -1,9 +1,13 @@
 import re
 from collections import Counter
+import os
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+WORDS_RESOURCESTRING = str(ROOT_DIR + '/resources/de_words.txt')
 
 def words(text): return re.findall(r'\w+', text.lower())
 
-WORDS = Counter(words(open('de_words.txt', encoding='utf-8').read()))
+WORDS = Counter(words(open(WORDS_RESOURCESTRING, encoding='utf-8').read()))
 
 def P(word, N=sum(WORDS.values())):
     "Probability of `word`."
@@ -35,4 +39,4 @@ def edits2(word):
     "All edits that are two edits away from `word`."
     return (e2 for e1 in edits1(word) for e2 in edits1(e1))
 
-print(correction('runterdrehhen'))
+#print(correction('willl'))
