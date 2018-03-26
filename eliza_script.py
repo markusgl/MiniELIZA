@@ -20,6 +20,12 @@ rules_de = {
                    'Was hält dich davon ab {0} zu besorgen?'],
 
  'ich habe (.*)': ['Warum hast du {0}?'],
+ 'ich kann nicht (.*)': ['Woher weißt du dass du nicht {0} kannst?',
+                         'Vielleicht kannst du {0} wenn du es versuchst.',
+                         'Was würdest du benötige um zu {0}?'],
+ 'ich bin (.*)': ['Bist du gekommen wiel du {0} bist?',
+                  'Wie lange bist du schon {0}',
+                  'Wie fühlst du dich dabei {0} zu sein?'],
  'erinnerst du dich an (.*)': ['Denkst du ich wuerde {0} vergessen?',
                                'Wie koennte ich {0} vergessen!',
                                'Was ist mit {0}?',

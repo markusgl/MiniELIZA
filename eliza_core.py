@@ -95,7 +95,7 @@ while True:
     cor_user_input = ""
     for word in user_input.split():
         cor_user_input += sc.correction(word) + " "
-    #print(cor_user_input)
+
     if user_input == "bye":
         print(bot_template.format("Bye bye!"))
         break
