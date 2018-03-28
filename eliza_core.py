@@ -2,7 +2,6 @@ import re
 import random
 import time
 import eliza_script
-import spell_check as sc
 
 bot_template = "Bot: {}"
 user_template = "Du: {}"
@@ -90,13 +89,3 @@ def send_message(message):
 #send_message("Was ist wenn du den Weltfrieden herbeifuehren koenntest")
 
 
-while True:
-    user_input = input("Du: ").lower()
-    cor_user_input = ""
-    for word in user_input.split():
-        cor_user_input += sc.correction(word) + " "
-
-    if user_input == "bye":
-        print(bot_template.format("Bye bye!"))
-        break
-    send_message(re.sub("[!?,^]", "", cor_user_input.rstrip()))
