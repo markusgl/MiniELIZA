@@ -2,6 +2,7 @@ import re
 import random
 import time
 import eliza_script
+import spell_check as sc
 
 bot_template = "Bot: {}"
 user_template = "Du: {}"
@@ -69,12 +70,24 @@ def respond(message):
         response = response.format(phrase)
     return response
 
+def spell_checking(message):
+    user_input = message.lower()
+    cor_user_input = ""
+    for word in user_input.split():
+        cor_user_input += sc.correction(word) + " "
+
+    if user_input == "bye":
+        return bot_template.format("Bye bye!")
+
+    return re.sub("[!?,^]", "", cor_user_input.rstrip())
 
 def send_message(message):
     #print(user_template.format(message))
+    message = spell_checking(message)
     response = respond(message)
     time.sleep(0.5)
     print(bot_template.format(response))
+    return bot_template.format(response)
 
 # Test match_rule
 #print(match_rule(rules, "do you remember your last birthday"))
@@ -87,5 +100,4 @@ def send_message(message):
 #send_message("Ich will einen Roboter-Freund")
 #send_message("Was wenn du alles sein koenntest was du willst")
 #send_message("Was ist wenn du den Weltfrieden herbeifuehren koenntest")
-
 
